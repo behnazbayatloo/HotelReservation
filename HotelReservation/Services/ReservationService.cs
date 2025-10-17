@@ -23,7 +23,16 @@ namespace HotelReservation.Services
 
         public bool GenerateReserve( DateTime chin,DateTime chout,int userid ,int roomid ,StatusEnum status)
         {
-          
+          if (chin<DateTime.Now || chout<DateTime.Now)
+            {
+                throw new Exception("thi date pased.");
+
+            }
+          if (chin>chout)
+            {
+                throw new Exception("checkout date can't earlier than checkin date.");
+            }
+
           bool result=  _reserv.IsRoomAvailableAsync(roomid, chin, chout);
             if (result)
             {

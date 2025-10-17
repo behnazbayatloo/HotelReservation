@@ -43,6 +43,7 @@ namespace HotelReservation.Infrastructure.Repositories
                     r.CheckOutDate > startDate);
         }
 
+        
         public List<ShowReservationDto> GetAll(int customerid)
         {
             return _dbcontext.Reservations.AsNoTracking().Where(r=>r.UserId == customerid)
