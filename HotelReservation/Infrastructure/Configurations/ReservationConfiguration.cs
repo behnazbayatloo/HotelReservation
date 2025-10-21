@@ -14,7 +14,7 @@ namespace HotelReservation.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<Reservation> builder)
         {
-            builder.Property(r=>r.CreatedAt).HasDefaultValueSql("GETDATE()");
+            builder.Property(r=>r.CreatedAt).HasDefaultValueSql("GETDATE()").ValueGeneratedOnAdd();
           
             builder.HasOne(r => r.HotelRoom)
                 .WithMany(h => h.Reservations)

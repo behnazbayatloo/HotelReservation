@@ -25,7 +25,7 @@ namespace HotelReservation.Services
         {
           if (chin<DateTime.Now || chout<DateTime.Now)
             {
-                throw new Exception("thi date pased.");
+                throw new Exception("this date pased.");
 
             }
           if (chin>chout)
@@ -34,7 +34,7 @@ namespace HotelReservation.Services
             }
 
           bool result=  _reserv.IsRoomAvailableAsync(roomid, chin, chout);
-            if (result)
+            if (!result)
             {
                 var newreserv = new ReservationDto()
                 {

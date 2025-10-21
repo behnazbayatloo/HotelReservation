@@ -59,7 +59,7 @@ namespace HotelReservation.Migrations
                         {
                             Id = 1,
                             Capacity = 3,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             PricePerNight = 200f,
                             RoomDetailId = 1,
                             RoomNumber = "1"
@@ -68,7 +68,7 @@ namespace HotelReservation.Migrations
                         {
                             Id = 2,
                             Capacity = 4,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             PricePerNight = 300f,
                             RoomDetailId = 2,
                             RoomNumber = "2"
@@ -77,7 +77,7 @@ namespace HotelReservation.Migrations
                         {
                             Id = 3,
                             Capacity = 2,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             PricePerNight = 100f,
                             RoomDetailId = 3,
                             RoomNumber = "3"
@@ -86,7 +86,7 @@ namespace HotelReservation.Migrations
                         {
                             Id = 4,
                             Capacity = 2,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             PricePerNight = 500f,
                             RoomDetailId = 4,
                             RoomNumber = "4"
@@ -223,7 +223,7 @@ namespace HotelReservation.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             Password = "12345",
                             Role = "Admin",
                             UserName = "Admin"
@@ -231,15 +231,15 @@ namespace HotelReservation.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             Password = "12345",
                             Role = "Receptionist",
-                            UserName = ""
+                            UserName = "Reception"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             Password = "12345",
                             Role = "NormalUser",
                             UserName = "behnazbayatloo"
@@ -247,7 +247,7 @@ namespace HotelReservation.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(1404, 7, 22, 13, 32, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 10, 17, 13, 32, 0, 0, DateTimeKind.Unspecified),
                             Password = "12345",
                             Role = "NormalUser",
                             UserName = "meysambeigi"

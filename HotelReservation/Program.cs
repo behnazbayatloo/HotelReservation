@@ -117,50 +117,50 @@ void AdminMenue()
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine(FiggleFonts.Standard.Render("Add Room"));
                         Console.ResetColor();
-                        Console.Write("if you want choose detail from exist details enter 1 or create new one enter 2: ");
-                        string result = Console.ReadLine();
-                        int detailid = 0;
-                        if (result == "1")
-                        {
-                            var list = _room.ShowRoomDetail();
+    //                    Console.Write("if you want choose detail from exist details enter 1 or create new one enter 2: ");
+    //                    string result = Console.ReadLine();
+    //                    int detailid = 0;
+    //                    if (result == "1")
+    //                    {
+    //                        var list = _room.ShowRoomDetail();
 
-                            var table = new Table()
-                            .Title("👩‍🏫 RoomDetails")
-    .AddColumn("RoomId")
-    .AddColumn("Description")
-    .AddColumn("HasAirConditioner")
-    .AddColumn("HasWifi")
-    .Border(TableBorder.Rounded)
-    .Centered();
-                            foreach (var name in list)
-                            {
-                                table.AddRow(name.RoomId.ToString(), name.Description.ToString(), name.HasAirConditioner.ToString(), name.HasWifi.ToString());
-                                table.UseSafeBorder = true;
-                                table.ShowRowSeparators = true;
-                            }
+    //                        var table = new Table()
+    //                        .Title("👩‍🏫 RoomDetails")
+    //.AddColumn("RoomId")
+    //.AddColumn("Description")
+    //.AddColumn("HasAirConditioner")
+    //.AddColumn("HasWifi")
+    //.Border(TableBorder.Rounded)
+    //.Centered();
+    //                        foreach (var name in list)
+    //                        {
+    //                            table.AddRow(name.RoomId.ToString(), name.Description.ToString(), name.HasAirConditioner.ToString(), name.HasWifi.ToString());
+    //                            table.UseSafeBorder = true;
+    //                            table.ShowRowSeparators = true;
+    //                        }
 
-                            AnsiConsole.Write(table);
-                            Console.Write("enter detailid: ");
-                            detailid = Int32.Parse(Console.ReadLine());
+    //                        AnsiConsole.Write(table);
+                        //    Console.Write("enter detailid: ");
+                        //    detailid = Int32.Parse(Console.ReadLine());
 
-                        }
-                        else if (result == "2")
-                        {
+                        //}
+                        //else if (result == "2")
+                        //{
                             Console.Write("Description: ");
                             string description = Console.ReadLine();
                             Console.Write("If it has AirCondition enter true and else enter false");
                             var output1 = bool.TryParse(Console.ReadLine(), out bool outresult1);
                             Console.Write("If it has Wifi enter true and else enter false");
                             var output2 = bool.TryParse(Console.ReadLine(), out bool outresult2);
-                            detailid = _room.AddRoomDetail(description, output1, output2);
+                           int  detailid = _room.AddRoomDetail(description, output1, output2);
                             Console.WriteLine($"RoomDetailId={detailid}");
                             Console.ReadKey();
-                        }
-                        else
-                        {
-                            Console.WriteLine("enter correct one");
-                            Console.ReadKey();
-                        }
+                        
+                        //else
+                        //{
+                        //    Console.WriteLine("enter correct one");
+                        //    Console.ReadKey();
+                        //}
 
 
                         Console.Write("enter RoomNumber: ");
@@ -273,34 +273,35 @@ void ReciptionMenue()
                         Console.Write("enter roomID: ");
                         int roomid=int.Parse(Console.ReadLine());
                         Console.Write("enter entry Date: ");
-                        string userInput1 = Console.ReadLine();
-                        DateTime entry= DateTime.Now;
-                        if (DateTime.TryParse(userInput1, out DateTime date1))
-                        {
-                            entry = date1;
-                        }
-                        else
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("it is not correct, enter correct one.");
-                            Console.ResetColor();
-                            Console.ReadKey();
-                        }
+                        bool entry = DateTime.TryParse(Console.ReadLine(), out DateTime date1);
+                        //string userInput1 = Console.ReadLine();
+                        //DateTime entry= DateTime.Now;
+                        //if (DateTime.TryParse(userInput1, out DateTime date1))
+                        //{
+                        //    entry = date1;
+                        //}
+                        //else
+                        //{
+                        //    Console.ForegroundColor = ConsoleColor.Red;
+                        //    Console.WriteLine("it is not correct, enter correct one.");
+                        //    Console.ResetColor();
+                        //    Console.ReadKey();
+                        //}
                         Console.Write("enter Exit Date: ");
-                        string userInput2 = Console.ReadLine();
-                        DateTime exit = DateTime.Now;
-                        if (DateTime.TryParse(userInput2, out DateTime date2))
-                        {
-                            exit = date2;
-                        }
-                        else
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("it is not correct, enter correct one.");
-                            Console.ResetColor();
-                            Console.ReadKey();
-                        }
-                        bool reserve = _reserv.GenerateReserve(entry, exit, customerid, roomid, StatusEnum.Confirmed);
+                        bool exit = DateTime.TryParse(Console.ReadLine(), out DateTime date2);
+                        //DateTime exit = DateTime.Now;
+                        //if (DateTime.TryParse(Console.ReadLine(), out DateTime date2))
+                        //{
+                        //    exit = date2;
+                        //}
+                        //else
+                        //{
+                        //    Console.ForegroundColor = ConsoleColor.Red;
+                        //    Console.WriteLine("it is not correct, enter correct one.");
+                        //    Console.ResetColor();
+                        //    Console.ReadKey();
+                        //}
+                        bool reserve = _reserv.GenerateReserve(date1, date2, customerid, roomid, StatusEnum.Confirmed);
                         if (reserve)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
@@ -311,7 +312,7 @@ void ReciptionMenue()
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("reservation faild.");
+                            Console.WriteLine("this room already reserved");
                             Console.ResetColor();
                             Console.ReadKey();
                         }

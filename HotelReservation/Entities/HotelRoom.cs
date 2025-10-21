@@ -13,7 +13,7 @@ namespace HotelReservation.Entities
         public string RoomNumber { get; set; }
         public int Capacity { get; set; }
         public float PricePerNight { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public List<Reservation> Reservations { get; set; }
 

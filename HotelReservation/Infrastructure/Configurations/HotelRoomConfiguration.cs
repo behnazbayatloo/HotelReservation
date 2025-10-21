@@ -24,10 +24,10 @@ namespace HotelReservation.Infrastructure.Configurations
 
             builder.HasData(new List<HotelRoom>()
             {
-                new HotelRoom() {Id=1,RoomNumber="1",Capacity=3,PricePerNight=200,CreatedAt=new DateTime(1404,07,22,13,32,0),RoomDetailId=1 },
-                new HotelRoom() {Id=2,RoomNumber="2",Capacity=4,PricePerNight=300,CreatedAt=new DateTime(1404,07,22,13,32,0),RoomDetailId=2 },
-                 new HotelRoom() {Id=3,RoomNumber="3",Capacity=2,PricePerNight=100,CreatedAt=new DateTime(1404,07,22,13,32,0),RoomDetailId=3 },
-                  new HotelRoom() {Id=4,RoomNumber="4",Capacity=2,PricePerNight=500,CreatedAt=new DateTime(1404,07,22,13,32,0),RoomDetailId=4 }
+                new HotelRoom() {Id=1,RoomNumber="1",Capacity=3,PricePerNight=200,CreatedAt=new DateTime(2025,10,17,13,32,0),RoomDetailId=1 },
+                new HotelRoom() {Id=2,RoomNumber="2",Capacity=4,PricePerNight=300,CreatedAt=new DateTime(2025,10,17,13,32,0),RoomDetailId=2 },
+                 new HotelRoom() {Id=3,RoomNumber="3",Capacity=2,PricePerNight=100,CreatedAt=new DateTime(2025,10,17,13,32,0),RoomDetailId=3 },
+                  new HotelRoom() {Id=4,RoomNumber="4",Capacity=2,PricePerNight=500,CreatedAt=new DateTime(2025,10,17,13,32,0),RoomDetailId=4 }
 
             });
         }

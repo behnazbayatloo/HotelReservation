@@ -19,10 +19,10 @@ namespace HotelReservation.Infrastructure.Configurations
             builder.Property(u => u.Role).HasConversion<string>();
             builder.HasData(new List<User>
             {
-                new User () {Id=1,UserName="Admin" ,Password = "12345",Role =RoleEnum.Admin , CreatedAt = new DateTime(1404,07,22,13,32,0) },
-                new User () {Id=2,UserName= "Reception",Password="12345",Role=RoleEnum.Receptionist, CreatedAt=new DateTime(1404,07,22,13,32,0)},
-                new User () {Id=3,UserName="behnazbayatloo", Password="12345", Role=RoleEnum.NormalUser, CreatedAt= new DateTime(1404,07,22,13,32,0)},
-                new User () {Id=4,UserName="meysambeigi" ,Password="12345", Role =RoleEnum.NormalUser,CreatedAt= new DateTime(1404,07,22,13,32,0)},
+                new User () {Id=1,UserName="Admin" ,Password = "12345",Role =RoleEnum.Admin , CreatedAt = new DateTime(2025,10,17,13,32,0) },
+                new User () {Id=2,UserName= "Reception",Password="12345",Role=RoleEnum.Receptionist, CreatedAt=new DateTime(2025,10,17,13,32,0)},
+                new User () {Id=3,UserName="behnazbayatloo", Password="12345", Role=RoleEnum.NormalUser, CreatedAt= new DateTime(2025,10,17,13,32,0)},
+                new User () {Id=4,UserName="meysambeigi" ,Password="12345", Role =RoleEnum.NormalUser,CreatedAt= new DateTime(2025,10,17,13,32,0)},
 
             });
            

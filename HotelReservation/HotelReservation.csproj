@@ -17,8 +17,4 @@
     <PackageReference Include="Spectre.Console" Version="0.52.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

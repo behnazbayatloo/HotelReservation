@@ -1,5 +1,6 @@
 ﻿using HotelReservation.Dtos;
 using HotelReservation.Entities;
+using HotelReservation.Enums;
 using HotelReservation.Infrastructure.AppDb;
 using HotelReservation.Interfaces.RepositoryContracts;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,8 @@ namespace HotelReservation.Infrastructure.Repositories
                 CheckOutDate = reservation.CheckOutDate,
                 HotelRoomId = reservation.HotelRoomId,
                 Status = reservation.Status,
-                UserId= reservation.UserId
+                UserId = reservation.UserId,
+              
             };
             _dbcontext.Reservations.Add(reserve);
             _dbcontext.SaveChanges();
@@ -38,9 +40,10 @@ namespace HotelReservation.Infrastructure.Repositories
         {
             return  _dbcontext.Reservations
                 .Any(r =>
-                    r.RoomId == roomId &&
-                    r.CheckInDate < endDate &&
-                    r.CheckOutDate > startDate);
+                    r.HotelRoomId == roomId &&
+                   ( r.CheckInDate >= endDate ||
+                    r.CheckOutDate <= startDate)
+                    && r.Status==StatusEnum.Confirmed);
         }
 
         
